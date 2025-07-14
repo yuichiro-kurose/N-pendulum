@@ -67,7 +67,7 @@ N_pendulums = int(input("Enter the number of pendulums (N): ")) # Number of pend
 # Masses (kg)
 masses = np.array([1.0] * N_pendulums)
 # Lengths (m)
-lengths = np.array([1.0] * N_pendulums)
+lengths = np.array([0.5] * N_pendulums)
 # Gravity (m/s^2)
 gravity = 9.80665 # Standard gravity
 
@@ -84,8 +84,8 @@ if len(initial_thetas) != N_pendulums or len(initial_dthetas) != N_pendulums:
 initial_state = np.concatenate((initial_thetas, initial_dthetas))
 
 # Time span for simulation
-t_span = (0, 20)  # Simulate from 0 to 20 seconds
-t_eval = np.linspace(t_span[0], t_span[1], 1000) # Evaluate at 1000 points for smooth animation
+t_span = (0, 60)  # Simulate from 0 to 20 seconds
+t_eval = np.linspace(t_span[0], t_span[1], 3000) # Evaluate at 1000 points for smooth animation
 
 # --- 3. Solve the ODEs ---
 print("Simulating N-pendulum motion...")
